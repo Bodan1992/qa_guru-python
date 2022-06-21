@@ -13,26 +13,27 @@ def init_browser(request):                                                      
 def message():
     return "This is message"
 
+#не законченный тест на форму
 
-@pytest.fixture()
-def client():
-    print(123)
-    yield                                           #запус
-    print("А теперь удаляем клиента")
-
-
-def test_first(before_each):
-    assert 1 == 1
-
-def test_second(before_each):
-    assert 1 == 2, "Единица не должна быть равна двойке!"
+# @pytest.fixture()
+# def client():
+#     print(123)
+#     yield                                           #запуск 
+#     print("А теперь удаляем клиента")
 
 
-def test_message(message,firefox):
-    print(message)
-    assert "message" in message
+# def test_first(before_each):
+#     assert 1 == 1
 
-def test_client(client):
-    assert client == 123
+# def test_second(before_each):
+#     assert 1 == 2, "Единица не должна быть равна двойке!"
+
+
+# def test_message(message,firefox):
+#     print(message)
+#     assert "message" in message
+
+# def test_client(client):
+#     assert client == 123
 
 
