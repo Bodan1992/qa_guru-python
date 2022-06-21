@@ -1,19 +1,19 @@
 
 # пример из лекции
-# import pytest
-#
-# @pytest.fixture()                                      # decorator(декоратор)
-# def before_each(request):
-#     print("Called before each test " + request.node.name)               # request.node.name-проверка правда ли запускается фикстура перед каждым тестом
-#
-# @pytest.fixture(scope='session',autouse=True)                                      # decorator(декоратор)/ scope='session-вызывается для каждой сессии
-# def init_browser(request):                                                         #autouse=True-не явная инициализация(запуск в каждом тесте)
-#     print("Called before all tests " + request.node.name)
-#
-# @pytest.fixture()
-# def message():
-#     return "This is message"
-#
+import pytest
+
+@pytest.fixture()                                      # decorator(декоратор)
+def before_each(request):
+    print("Called before each test " + request.node.name)               # request.node.name-проверка правда ли запускается фикстура перед каждым тестом
+
+@pytest.fixture(scope='session',autouse=True)                                      # decorator(декоратор)/ scope='session-вызывается для каждой сессии
+def init_browser(request):                                                         #autouse=True-не явная инициализация(запуск в каждом тесте)
+    print("Called before all tests " + request.node.name)
+
+@pytest.fixture()
+def message():
+    return "This is message"
+
 
 # @pytest.fixture()
 # def client():
