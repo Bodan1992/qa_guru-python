@@ -1,5 +1,5 @@
 from selene.support.shared import browser
-from selene import be, have, command
+from selene import have, command
 import os
 
 def opened_form():
@@ -11,6 +11,7 @@ def opened_form():
 def test_form():
     opened_form()
 
+    # Act
     browser.element('#firstName').type('Bohdan')
 
     browser.element('#lastName').type('Obruch')
@@ -41,6 +42,7 @@ def test_form():
 
     browser.element('#submit').perform(command.js.click)
 
+    #Assert
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
 
     browser.elements("table tr").element(1).should(have.text('Bohdan Obruch'))
