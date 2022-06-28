@@ -11,30 +11,30 @@ def opened_form():
 def test_form():
     opened_form()
 
-    browser.element('#firstName').should(be.blank).type('Bohdan')
+    browser.element('#firstName').type('Bohdan')
 
-    browser.element('#lastName').should(be.blank).type('Obruch')
+    browser.element('#lastName').type('Obruch')
 
-    browser.element('#userEmail').should(be.blank).type('bodan@gmail.com')
+    browser.element('#userEmail').type('bodan@gmail.com')
 
     browser.element('[for="gender-radio-1"]').click()
 
-    browser.element('#userNumber').should(be.blank).type('0960263611')
+    browser.element('#userNumber').type('0960263611')
 
     browser.element('#dateOfBirthInput').scroll_to().click()
     browser.element('[value="1992"]').click()
     browser.element('[value="0"]').click()
     browser.element('div[aria-label="Choose Wednesday, January 1st, 1992"]').click()
 
-    browser.element('#subjectsInput').should(be.blank).type('Maths').press_tab()
-    browser.element('#subjectsInput').should(be.blank).type('English').press_tab()
+    browser.element('#subjectsInput').type('Maths').press_tab()
+    browser.element('#subjectsInput').type('English').press_tab()
 
     browser.element('[for="hobbies-checkbox-1"]').click()
     browser.element('[for="hobbies-checkbox-3"]').click()
 
     browser.element('#uploadPicture').send_keys(os.path.abspath('../tests/photo.jpg'))
 
-    browser.element('#currentAddress').should(be.blank).type('г.Киев, ул.Академика Туполева 20в')
+    browser.element('#currentAddress').type('г.Киев, ул.Академика Туполева 20в')
 
     browser.element('#react-select-3-input').type('Haryana').press_tab()
     browser.element('#react-select-4-input').type('Karnal').press_tab()
